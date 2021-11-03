@@ -1,8 +1,9 @@
-import { ADD_FAVORITE, REMOVE_FAVORITE, SHOW_FAVORITE } from '../actions/favoriteActions.js';
+import { ADD_FAVORITE, FLASH_MOVIE, REMOVE_FAVORITE, SHOW_FAVORITE } from '../actions/favoriteActions.js';
 
 export const initialState = {
     favorites: [],
-    displayFavorites: true
+    displayFavorites: true,
+    movieToFlash: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -21,6 +22,11 @@ const reducer = (state = initialState, action) => {
             return {
               ...state,
               displayFavorites : !state.displayFavorites
+            }
+        case FLASH_MOVIE:
+            return {
+              ...state,
+              movieToFlash: action.payload
             }
         default:
             return state;

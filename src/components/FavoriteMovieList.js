@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const FavoriteMovieList = (props) => {
-    const {favorites, displayFavorites} = props;
+    const {favorites, movieToFlash} = props;
 
 
     function handleRemove(id) {
@@ -14,10 +14,10 @@ const FavoriteMovieList = (props) => {
     
     return (<div className="col-xs savedContainer">
         <h5>Favorite Movies</h5>
-        {   displayFavorites &&
+        {   
             favorites.map(movie=>{
                 return <div key={movie.id}>
-                    <Link className="btn btn-light savedButton" to={`/movies/${movie.id}`}>
+                    <Link className={movieToFlash === movie.id ? "flash btn btn-light savedButton" : "btn btn-light savedButton"} to={`/movies/${movie.id}`}>
                         {movie.title}
                         <span><span onClick={() => {handleRemove(movie.id)}} className="material-icons">remove_circle</span></span>
                     </Link> 
@@ -30,7 +30,7 @@ const FavoriteMovieList = (props) => {
 const mapStateToProps = (state) => {
     return({
         favorites: state.favorite.favorites,
-        displayFavorites : state.favorite.displayFavorites
+        movieToFlash: state.favorite.movieToFlash
     })
 
 }

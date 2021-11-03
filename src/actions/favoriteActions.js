@@ -1,7 +1,7 @@
 export const ADD_FAVORITE = "ADD_FAVORITE";
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE'
 export const SHOW_FAVORITE = 'SHOW_FAVORITE'
-
+export const FLASH_MOVIE = 'FLASH_MOVIE'
 
 export const addFavorite = (movie)=>{
     return({type: ADD_FAVORITE, payload:movie});
@@ -12,4 +12,7 @@ export const deleteFavorite = (data) => {
 }
 export const toogleShowFav = () => {
     return({type: SHOW_FAVORITE})
+}
+export const flashMovie = (id) => {
+    return({type: FLASH_MOVIE, payload:id})
 }

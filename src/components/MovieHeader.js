@@ -8,7 +8,6 @@ const MovieHeader = (props) => {
     const {displayFavorites} = props;
 
  function handleToggleShow() {
-     console.log(displayFavorites)
     props.toogleShowFav()
  }   
     return(<div className="table-title">
