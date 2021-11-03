@@ -8,6 +8,7 @@ const AddMovieForm = (props) => {
     const { push } = useHistory();
 
     const [movie, setMovie] = useState({
+        id: Date.now(),
         title: "",
         director: "",
         genre: "",
@@ -18,11 +19,14 @@ const AddMovieForm = (props) => {
     const handleChange = (e) => {
         setMovie({
             ...movie,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         });
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault()
+        props.addMovie(movie)
+        push('/movies')
     }
 
     const { title, director, genre, metascore, description } = movie;
@@ -67,4 +71,4 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
-export default AddMovieForm;
+export default connect(null, { addMovie })(AddMovieForm);
