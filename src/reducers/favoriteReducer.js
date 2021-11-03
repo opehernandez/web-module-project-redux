@@ -8,13 +8,11 @@ export const initialState = {
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_FAVORITE:
-            console.log('reducer')
             return {
                 ...state, 
                 favorites: [...state.favorites, action.payload]
             }
         case REMOVE_FAVORITE:
-            console.log(state.favorites)
             return {
                 ...state,
                 favorites: state.favorites.filter(item=>(action.payload !== item.id))

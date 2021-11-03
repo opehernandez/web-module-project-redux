@@ -4,7 +4,6 @@ export const SHOW_FAVORITE = 'SHOW_FAVORITE'
 
 
 export const addFavorite = (movie)=>{
-    console.log('action')
     return({type: ADD_FAVORITE, payload:movie});
 }
 
