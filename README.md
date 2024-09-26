@@ -1,3 +1,4 @@
+Osmanys Perez
 # Redux React Module Project: Movie CRUD
 
 This module explored the redux philosophy, creation of the redux store and using connect to link state and action to arbitrary components.

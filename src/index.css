@@ -193,3 +193,16 @@ table.table .avatar {
   .navbar-brand img {
 	padding: 5px;
   }
+
+
+  .flash {
+	  animation:flash 0.5s forwards;
+  }
+
+  @keyframes flash {
+	0% { transform: scale(1)}
+	20% {transform: scale(1.1); background: red;}
+	50% { transform: scale(1)}
+	75% {transform: scale(1.1); background: red;}
+	100% { transform: scale(1)}
+  }

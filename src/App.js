@@ -12,13 +12,11 @@ import AddMovieForm from './components/AddMovieForm';
 import FavoriteMovieList from './components/FavoriteMovieList';
 
 const App = props => {
-  const displayFavorites = true;
+  const {displayFavorites} = props;
 
   return (
     <div>
-      <nav className="navbar navbar-dark bg-dark">
-        <span className="navbar-brand" ><img width="40px" alt="" src="./Lambda-Logo-Red.png"/>Redux Module Project</span>
-      </nav>
+      
 
       <div className="container">
         <MovieHeader/>
@@ -47,5 +45,10 @@ const App = props => {
     </div>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    displayFavorites : state.favorite.displayFavorites
+  }
+}
 
-export default App;
+export default connect(mapStateToProps)(App);
